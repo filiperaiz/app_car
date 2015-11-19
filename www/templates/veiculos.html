@@ -1,0 +1,112 @@
+
+<ion-view view-title="Veículos">
+
+
+    <ion-content class="padding">
+        <div class="block-btn-center">
+            <a class="button button-block button-calm" ng-click="modal.show()">
+                Adicionar carro
+            </a>
+        </div>
+
+        <div class="list">
+            <a class="item item-thumbnail-left item-car" href="#">
+                <img src="img/model-car/gol.jpg">
+                <h2>Gol</h2>
+                <p><b>Versão:</b>Highline 1.4 TSI</p>
+                <p><b>Placa:</b>NIF 7492 </p>
+                <p><b>Ano:</b> 2013/2014 </p>
+            </a>
+            <a class="item item-thumbnail-left item-car" href="#">
+                <img src="img/model-car/golf.jpg">
+                <h2>Golf</h2>
+                <p><b>Versão:</b>Highline 1.4 TSI</p>
+                <p><b>Placa:</b>NIF 7492 </p>
+                <p><b>Ano:</b> 2013/2014 </p>
+            </a>
+            <a class="item item-thumbnail-left item-car" href="#">
+                <img src="img/model-car/up.jpg">
+                <h2>UP</h2>
+                <p><b>Versão:</b>Highline 1.4 TSI</p>
+                <p><b>Placa:</b>NIF 7492 </p>
+                <p><b>Ano:</b> 2013/2014 </p>
+            </a>
+
+        </div>
+    </ion-content>
+</ion-view>
+
+<script id="templates/modal-addcar.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+            <h1 class="title">Adicionar carro</h1>
+            <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
+        </ion-header-bar>
+
+        <ion-content class="padding">
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Selecione um carro
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>Gol</option>
+                        <option>Golf</option>
+                        <option>Fox</option>
+                        <option>UP</option>
+                        <option>Amarok</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Selecione uma versão
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>versão 1</option>
+                        <option>versão 2</option>
+                        <option>versão 3</option>
+                    </select>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Placa</span>
+                    <input type="text" placeholder="xxx 0000">
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Ano/Versão
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Ano/Modelo
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                    </select>
+                </label>
+
+
+               <div class="block-btn-center">
+                    <a class="button button-block button-balanced" ng-click="createContact(newUser)">
+                       Salvar
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

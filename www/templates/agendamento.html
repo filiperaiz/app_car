@@ -1,0 +1,137 @@
+
+<ion-view view-title="Agendamento">
+    <ion-content class="padding">
+        <div class="block-btn-center">
+            <a class="button button-block button-calm" ng-click="modal.show()">
+                Criar agendamento
+            </a>
+        </div>
+
+        <div class="list-agendamento list">
+            <a class="item item-thumbnail-left item-car item-agendamento" href="#">
+                <img src="img/model-car/gol.jpg">
+                <h2>Gol</h2>
+                <p><b>Data e hora:</b>18 de Novembro de 2015 - 12:00h</p>
+                <p><b>Serviço:</b> Serviço 1</p>
+                <p><b>km:</b>123456 km</p>
+                <p><b>Loja:</b>Loja 1</p>
+                <p><b>Consultor:</b>Loja 1</p>
+                <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id distinctio obcaecati! Quia id voluptatum similique optio, aperiam</p>
+            </a>
+
+            <a class="item item-thumbnail-left item-car item-agendamento" href="#">
+                <img src="img/model-car/golf.jpg">
+                <h2>Golf</h2>
+                <p><b>Data e hora:</b>18 de Novembro de 2015 - 12:00h</p>
+                <p><b>Serviço:</b> Serviço 1</p>
+                <p><b>km:</b>123456 km</p>
+                <p><b>Loja:</b>Loja 1</p>
+                <p><b>Consultor:</b>Loja 1</p>
+                <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id distinctio obcaecati! Quia id voluptatum similique optio, aperiam</p>
+            </a>
+
+            <a class="item item-thumbnail-left item-car item-agendamento" href="#">
+                <img src="img/model-car/up.jpg">
+                <h2>UP</h2>
+                <p><b>Data e hora:</b>18 de Novembro de 2015 - 12:00h</p>
+                <p><b>Serviço:</b> Serviço 1</p>
+                <p><b>km:</b>123456 km</p>
+                <p><b>Loja:</b>Loja 1</p>
+                <p><b>Consultor:</b>Loja 1</p>
+                <p class="descricao">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit id distinctio obcaecati! Quia id voluptatum similique optio, aperiam</p>
+            </a>
+        </div>
+
+
+    </ion-content>
+</ion-view>
+
+<script id="templates/modal-addagendamento.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+            <h1 class="title">Adicionar carro</h1>
+            <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
+        </ion-header-bar>
+
+        <ion-content class="padding">
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Selecione um carro
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>Gol</option>
+                        <option>Golf</option>
+                        <option>Fox</option>
+                        <option>UP</option>
+                        <option>Amarok</option>
+                    </select>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">KM atual</span>
+                    <input type="text" placeholder="0000 km">
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Serviço
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>serviço 1</option>
+                        <option>serviço 2</option>
+                        <option>serviço 3</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Loja
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>Loja 1</option>
+                        <option>Loja 2</option>
+                        <option>Loja 3</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Consultor
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>Consultor 1</option>
+                        <option>Consultor 2</option>
+                        <option>Consultor 3</option>
+                    </select>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Data Disponivel</span>
+                    <input type="date" placeholder="__/__/__">
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">Hora Disponivel</span>
+                    <input type="time" placeholder="__/__/__">
+                </label>
+
+
+
+
+
+               <div class="block-btn-center">
+                    <a class="button button-block button-balanced" ng-click="createContact(newUser)">
+                       Salvar
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>
+
+

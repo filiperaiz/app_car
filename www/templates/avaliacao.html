@@ -1,0 +1,173 @@
+
+<ion-view view-title="Comprar carro">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Selecione um carro
+                </div>
+                <select>
+                    <option>Selecione</option>
+                    <option>Gol</option>
+                    <option>Golf</option>
+                    <option>Fox</option>
+                    <option>UP</option>
+                    <option>Amarok</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Selecione uma versão
+                </div>
+                <select>
+                    <option>Selecione</option>
+                    <option>versão 1</option>
+                    <option>versão 2</option>
+                    <option>versão 3</option>
+                </select>
+            </label>
+
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Valor da entrada
+                </div>
+                <select>
+                    <option>Selecione</option>
+                    <option>R$1.000,00</option>
+                    <option>R$1.500,00</option>
+                    <option>R$2.000,00</option>
+                    <option>R$2.500,00</option>
+                    <option>R$3.000,00</option>
+                    <option>R$3.500,00</option>
+                    <option>R$4.500,00</option>
+                    <option>R$4.500,00</option>
+                    <option>R$5.000,00</option>
+
+                </select>
+            </label>
+
+            <div class="link-button">
+                <label>Clique aqui e avalie seu carro
+                    <input type="checkbox" ng-model="mustShow" />
+                </label>
+            </div>
+
+
+
+        </div>
+
+
+
+        <div id="box-avaliar" ng-show="mustShow">
+            <div class="list">
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/frente.jpg">
+                    <h2>Foto da frente</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/interna.jpg">
+                    <h2>Foto interna</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/lateral_direita.jpg">
+                    <h2>Foto da lateral direita</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/lateral_esquerda.jpg">
+                    <h2>Foto da lateral esquerda</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/motor.jpg">
+                    <h2>Foto do motor</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/painel.jpg">
+                    <h2>Foto do painel</h2>
+                    <input type="file" placeholder="">
+                </div>
+
+                <div class="item item-thumbnail-left item-car" href="#">
+                    <img src="img/model-pic-car/traseira.jpg">
+                    <h2>Foto da traseira</h2>
+                    <input type="file" placeholder="">
+                </div>
+            </div>
+
+            <div class="list">
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Portas
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Combustivel
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>Flex</option>
+                        <option>Gasolina</option>
+                        <option>Alcool</option>
+                    </select>
+                </label>
+
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">KM</span>
+                    <input type="num" placeholder="00000">
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Ano/Versão
+                    </div>
+                    <select>
+                        <option>Selecione</option>
+                        <option>2014</option>
+                        <option>2015</option>
+                        <option>2016</option>
+                    </select>
+                </label>
+            </div>
+
+            <div class="list">
+                <label class="item item-input">
+                    <textarea placeholder="Descreva aqui os acessórios que o seu carro possui" rows="6"></textarea>
+                </label>
+            </div>
+        </div>
+
+         <div class="block-btn-center">
+                <a class="button button-block button-balanced" ng-click="">
+                   Enviar proposta
+                </a>
+            </div>
+
+
+
+
+
+
+    </ion-content>
+</ion-view>
+
+
+

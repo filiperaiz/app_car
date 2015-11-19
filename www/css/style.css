@@ -1,0 +1,84 @@
+/* Empty. Add your own CSS if you like */
+/*.main-top-content{
+    top: 44px;
+}*/
+
+.hero{
+    position: relative;
+}
+
+.hero img{
+    width: 100%;
+    display: block;;
+}
+
+.alert-circle{
+    position: absolute;
+    right: 10%;
+    top: 2px;
+    font-size: 11px;
+    padding: 5px;
+    min-width: 22px;
+    height: 22px;
+    line-height: 12px;
+    text-align: center;
+    z-index: 10;
+    background-color: #F34C4C;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+.item.item-car img{
+    border: 2px solid #11C1F3;
+    border-radius: 5px;
+}
+
+.item.item-car h2 {
+    font-size: 15px;
+    font-weight: bold;
+    color: #565656;
+    margin-bottom: 5px;
+}
+
+.item.item-car b{
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+.item.item-car p{
+    font-size: 12px;
+    margin-bottom: 0;
+    text-overflow: clip;
+    overflow: visible;
+    white-space: normal;;
+}
+
+.block-btn-center{
+    text-align: center;
+    padding: 10px;
+}
+
+.block-btn-center .button{
+    margin: 0;
+}
+
+.item-agendamento p{
+    font-size: 12px;
+}
+
+
+.link-button{
+    text-align: center;
+    padding: 25px 0 0;
+}
+
+.link-button label{
+    font-size: 13px;
+    color: #11C1F3;
+    font-weight: bold;
+}
+
+.link-button input{
+    visibility: hidden;
+}
