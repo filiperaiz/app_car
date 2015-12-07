@@ -3,19 +3,22 @@
     <ion-content class="padding">
         <div class="block-btn-center">
             <a class="button button-block button-calm" ng-click="modal.show()">
-                Agendar Serviço
+                Criar agendamento
             </a>
         </div>
+
         <div class="list-agendamento list">
 			<span ng-repeat="agendamento in agendamentos">
 				<a class="item item-thumbnail-left item-car item-agendamento" href="#">
-					<img src="{{agendamento.imagem}}">
+					<img src="img/model-car/gol.jpg">
 					<h2>{{agendamento.servico}}</h2>
 					<p><b>Data e hora:</b>{{agendamento.data_hora_agendamento}}</p>
-					<p><b>Veículo:</b>{{agendamento.modelo}} [{{agendamento.placa}}] <b>Km:</b>{{agendamento.km_atual}} km</p>
-					<p><b>Loja:</b>{{agendamento.loja}}</p>
-					<p><b>Status:</b>{{agendamento.status}}</p>					
-					<p class="descricao" ng-show="{{agendamento.mostra_obs}}"><b>Observações:</b>{{agendamento.obs_para_cliente}}</p>
+					<p><b>Veículo:</b>{{agendamento.modelo}}{{agendamento.placa}}</p>
+					<p><b>km:</b>{{agendamento.km_atual}} km</p>
+					<p><b>Loja:</b>Loja 1</p>
+					<p><b>Consultor:</b>Loja 1</p>
+					<p><b>Status:</b>{{agendamento.status_agendamento}}</p>					
+					<p class="descricao">{{agendamento.observacoes}}</p>
 				</a>
 			</span>
         </div>
@@ -37,7 +40,7 @@
                     <div class="input-label">
                       Selecione um carro
                     </div>
-                    <select ng-model="agendar.veiculo">
+                    <select ng-model="agendamento.veiculo">
 						<option value="">{{sel_veiculo}}</option>
 						<option ng-repeat="veiculo in veiculos" value="{{veiculo.id_veiculo_app}}">{{veiculo.modelo}} [{{veiculo.placa}}]</option>
 					</select>
@@ -45,14 +48,14 @@
 
                 <label class="item item-input">
                     <span class="input-label">KM atual</span>
-                    <input type="text" placeholder="00000" ng-model="agendar.km_atual">
+                    <input type="text" placeholder="00000" ng-model="agendamento.km_atual">
                 </label>
 
                 <label class="item item-input item-select">
                     <div class="input-label">
                       Serviço
                     </div>
-                    <select ng-model="agendar.servico">
+                    <select ng-model="agendamento.servico">
 						<option value="">{{sel_veiculo}}</option>
 						<option ng-repeat="servico in servicos" value="{{servico.id}}">{{servico.servico}}</option>
 					</select>
@@ -62,49 +65,42 @@
                     <div class="input-label">
                       Loja
                     </div>
-					<select name="loja" ng-model="agendar.loja">
+					<select name="loja" ng-change="getConsultor(agendamento.loja)" ng-model="agendamento.loja">
 						<option value="">{{sel_veiculo}}</option>
 						<option ng-repeat="loja in lojas" value="{{loja.empresa}}{{loja.revenda}}">{{loja.nome}}</option>
 					</select>
                 </label>
-				
-				<label class="item item-input">
-                    <span class="input-label">Data Disponivel</span>
-                    <input type="date" ng-model="agendar.dia">
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Consultor
+                    </div>
+                    <select name="loja" <!--ng-change="getHorario(agendamento.consultor)"--> ng-model="agendamento.consultor">
+						<option value="">{{sel}}</option>
+						<option ng-repeat="consultor in consultores"value="{{consultor.VENDEDOR}},{{consultor.EMPRESA}},{{consultor.REVENDA}}">{{consultor.NOME}}</option>
+					</select>
                 </label>
 				
 				<label class="item item-input item-select">
                     <div class="input-label">
                       Horário
                     </div>
-                    <select ng-model="agendar.hora">
+                    <select ng-model="agendamento.horario">
 						<option value="">Selecione um horário</option>
-						<option>7:30</option>
-						<option>8:00</option>
-						<option>8:30</option>
-						<option>9:00</option>
-						<option>9:30</option>						
-						<option>10:00</option>
-						<option>10:30</option>
-						<option>11:00</option>
-						<option>11:30</option>
-						<option>14:00</option>
-						<option>14:30</option>
-						<option>15:00</option>
-						<option>15:30</option>
-						<option>16:00</option>
-						<option>16:30</option>
-						<option>17:00</option>
-						<option>17:30</option>						
+						<option value="">7:30</option>
+						<option value="">8:00</option>
+						<option value="">8:30</option>
+						<option value="">9:00</option>
+						<option value="">9:30</option>						
+						<option value="">10:00</option>
+						<option value="">10:30</option>
+						<option value="">11:00</option>
+						<option value="">11:30</option>						
 					</select>
-                </label>
-				<label class="item item-input">
-                    <span class="input-label">Observações</span>
-                    <textarea placeholder="Observações" rows="6" ng-model="agendar.observacoes"></textarea>
                 </label>
 
                <div class="block-btn-center">
-                    <a class="button button-block button-balanced" ng-click="insAgendamento()" ng-disabled="!agendar.veiculo || !agendar.km_atual || !agendar.servico || !agendar.loja || !agendar.dia || !agendar.hora">
+                    <a class="button button-block button-balanced" ng-click="insAgendamento()">
                        Salvar
                     </a>
                 </div>

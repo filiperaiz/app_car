@@ -1,0 +1,31 @@
+<ion-view title="Cadastre-se">
+    <ion-content class="bg-app widget-welcome" scroll="false">
+        <div class="form-cadastrar">
+            <div class="list list-inset">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Nome</span>
+                    <input type="text" placeholder="Digite seu nome" ng-model="cliente.nome">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="Digite seu email" ng-model="cliente.email">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Celular</span>
+                    <input type="tel" placeholder="Digite o número" ng-model="cliente.celular">
+                </label>
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Senha</span>
+                    <input type="password" placeholder="Digite uma senha" ng-model="cliente.senha">
+                </label>
+            </div>
+            <div class="block-btn-center">
+                <a class="button button-block button-balanced" ng-click="insCliente()" ng-disabled="!cliente.nome || !cliente.email || !cliente.senha || !cliente.celular">
+                   Cadastrar
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
+
+

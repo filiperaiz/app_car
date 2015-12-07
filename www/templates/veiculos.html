@@ -2,31 +2,18 @@
     <ion-content class="padding">
         <div class="block-btn-center">
             <a class="button button-block button-calm" ng-click="modal.show()">
-                Adicionar carro
+                Adicionar veículo
             </a>
         </div>
-        <div class="list">
-            <a class="item item-thumbnail-left item-car" href="#">
-                <img src="img/model-car/gol.jpg">
-                <h2>Gol</h2>
-                <p><b>Versão:</b>Highline 1.4 TSI</p>
-                <p><b>Placa:</b>NIF 7492 </p>
-                <p><b>Ano:</b> 2013/2014 </p>
-            </a>
-            <a class="item item-thumbnail-left item-car" href="#">
-                <img src="img/model-car/golf.jpg">
-                <h2>Golf</h2>
-                <p><b>Versão:</b>Highline 1.4 TSI</p>
-                <p><b>Placa:</b>NIF 7492 </p>
-                <p><b>Ano:</b> 2013/2014 </p>
-            </a>
-            <a class="item item-thumbnail-left item-car" href="#">
-                <img src="img/model-car/up.jpg">
-                <h2>UP</h2>
-                <p><b>Versão:</b>Highline 1.4 TSI</p>
-                <p><b>Placa:</b>NIF 7492 </p>
-                <p><b>Ano:</b> 2013/2014 </p>
-            </a>
+        <div class="list" ng-repeat="veiculo in veiculos">
+			<span ng-show="{{veiculo.id_veiculo_app}}">
+				<a class="item item-thumbnail-left item-car" href="#">
+					<img src="{{veiculo.img_veiculo}}">
+					<h2>{{veiculo.modelo}}</h2>
+					<p><b>Placa:</b>{{veiculo.placa}}</p>
+					<p><b>Ano:</b> {{veiculo.ano_fabricacao}}/{{veiculo.ano_modelo}} </p>
+				</a>
+			</span>
         </div>
     </ion-content>
 </ion-view>
@@ -43,35 +30,20 @@
                     <div class="input-label">
                         Selecione um carro
                     </div>
-                    <select>
-                        <option>Selecione</option>
-                        <option>Gol</option>
-                        <option>Golf</option>
-                        <option>Fox</option>
-                        <option>UP</option>
-                        <option>Amarok</option>
-                    </select>
-                </label>
-                <label class="item item-input item-select">
-                    <div class="input-label">
-                        Selecione uma versão
-                    </div>
-                    <select>
-                        <option>Selecione</option>
-                        <option>versão 1</option>
-                        <option>versão 2</option>
-                        <option>versão 3</option>
-                    </select>
+                    <select ng-model="veiculo.modelo">
+						<option value="">{{sel}}</option>
+						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
+					</select>
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Placa</span>
-                    <input type="text" placeholder="xxx 0000">
+                    <input ng-model="veiculo.placa" type="text" placeholder="XXX-0000">
                 </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
-                        Ano/Versão
+                        Ano/Fabricação
                     </div>
-                    <select>
+                    <select ng-model="veiculo.ano_fabricacao">
                         <option>Selecione</option>
                         <option>2014</option>
                         <option>2015</option>
@@ -82,7 +54,7 @@
                     <div class="input-label">
                         Ano/Modelo
                     </div>
-                    <select>
+                    <select ng-model="veiculo.ano_modelo">
                         <option>Selecione</option>
                         <option>2014</option>
                         <option>2015</option>
@@ -90,10 +62,11 @@
                     </select>
                 </label>
                 <div class="block-btn-center">
-                    <a class="button button-block button-balanced" ng-click="createContact(newUser)">
+                    <a class="button button-block button-balanced" ng-click="insVeiculo()" ng-disabled="!veiculo.modelo || !veiculo.placa || !veiculo.ano_fabricacao || !veiculo.ano_modelo">
                        Salvar
                     </a>
                 </div>
+				{{retorno}}
             </div>
         </ion-content>
     </ion-modal-view>

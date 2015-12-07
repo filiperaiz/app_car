@@ -6,29 +6,18 @@
                 <div class="input-label">
                   Selecione um carro
                 </div>
-                <select>
-                    <option>Selecione</option>
-                    <option>Gol</option>
-                    <option>Golf</option>
-                    <option>Fox</option>
-                    <option>UP</option>
-                    <option>Amarok</option>
-                </select>
+                <select ng-model="funilaria.veiculo">
+						<option value="">{{sel_veiculo}}</option>
+						<option ng-repeat="veiculo in veiculos" value="{{veiculo.id_veiculo_app}}">{{veiculo.modelo}} [{{veiculo.placa}}]</option>
+				</select>
             </label>
 
             <label class="item item-input">
-                <span class="input-label">Placa</span>
-                <input type="text" placeholder="ABC 0000">
-            </label>
-
-            <label class="item item-input">
-                <textarea placeholder="Observações" rows="6"></textarea>
+                <textarea placeholder="Observações" rows="6" ng-model="funilaria.observacoes"></textarea>
               </label>
-
-
            <div class="block-btn-center">
-                <a class="button button-block button-balanced" ng-click="">
-                   Solicitar orçamento
+                <a class="button button-block button-balanced" ng-click="insFunilaria()">
+                   Agendar orçamento
                 </a>
             </div>
         </div>

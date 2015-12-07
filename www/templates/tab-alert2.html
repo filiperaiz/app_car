@@ -1,11 +1,11 @@
 <ion-view view-title="Alertas">
     <ion-content class="padding">
         <div class="list" ng-repeat="alerta in alertas">
-			
 			<span>
-				<a class="item item-thumbnail-left item-car" href="#/tab/{{alerta.tipo_notificacao}}/{{alerta.id}}">
-					<img src="http://alemanhafichas.com.br/app_alemanha/images/mensagem.png">
-					<h2>{{alerta.titulo}}</h2>
+				<a class="item item-thumbnail-left item-car" href="#/tab/view/{{alerta.id}}">
+					<!--<img src="{{alerta.link_notificacao}}">-->
+					<h2>{{veiculo.modelo}}</h2>
+					<p>{{alerta.titulo}}</p>
 					<p>{{alerta.mensagem}} </p>
 				</a>
 			</span>

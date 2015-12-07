@@ -5,41 +5,30 @@
                 <div class="input-label">
                     Selecione um carro
                 </div>
-                <select>
-                    <option>Selecione</option>
-                    <option>Gol</option>
-                    <option>Golf</option>
-                    <option>Fox</option>
-                    <option>UP</option>
-                    <option>Amarok</option>
-                </select>
+                <select ng-model="novo.modelo">
+						<option value="">{{sel}}</option>
+						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
+				</select>
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
-                    Selecione uma versão
+                   Valor da entrada
                 </div>
-                <select>
-                    <option>Selecione</option>
-                    <option>versão 1</option>
-                    <option>versão 2</option>
-                    <option>versão 3</option>
-                </select>
+                <input ng-model="novo.entrada" type="text" placeholder="0000">
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
-                    Valor da entrada
+                    Parcelas
                 </div>
-                <select>
+                <select ng-model="novo.parcela">
                     <option>Selecione</option>
-                    <option>R$1.000,00</option>
-                    <option>R$1.500,00</option>
-                    <option>R$2.000,00</option>
-                    <option>R$2.500,00</option>
-                    <option>R$3.000,00</option>
-                    <option>R$3.500,00</option>
-                    <option>R$4.500,00</option>
-                    <option>R$4.500,00</option>
-                    <option>R$5.000,00</option>
+                    <option>À vista</option>
+                    <option>12 meses</option>
+                    <option>18 meses</option>
+                    <option>24 meses</option>
+                    <option>36 meses</option>
+                    <option>48 meses</option>
+                    <option>60 meses</option>
                 </select>
             </label>
         </div>
@@ -55,7 +44,7 @@
                     <div class="item item-thumbnail-left item-car" href="#">
                         <img src="img/model-pic-car/frente.jpg">
                         <h2>Foto da frente</h2>
-                        <input type="file" placeholder="">
+                        <input type="file" name="image" id="image" ng-file-select="onFileSelect($files)">
                     </div>
                     <div class="item item-thumbnail-left item-car" href="#">
                         <img src="img/model-pic-car/interna.jpg">

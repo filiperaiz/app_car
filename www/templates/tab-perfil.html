@@ -1,27 +1,20 @@
 
 <ion-view view-title="Perfil">
     <ion-content class="padding">
-
-
         <div class="list">
           <label class="item item-input item-stacked-label">
             <span class="input-label">Nome</span>
-            <p>Filipe Raiz</p>
+            <p>{{perfil.cliente.nome}}</p>
           </label>
           <label class="item item-input item-stacked-label">
             <span class="input-label">Email</span>
-            <p>filiperaiz@gmail.com</p>
+            <p>{{perfil.cliente.email}}</p>
           </label>
           <label class="item item-input item-stacked-label">
-            <span class="input-label">Telefone</span>
-            <p>12121212121</p>
-          </label>
-          <label class="item item-input item-stacked-label">
-            <span class="input-label">Senha</span>
-            <p>*****</p>
+            <span class="input-label">Celular</span>
+            <p>{{perfil.cliente.celular}}</p>
           </label>
         </div>
-
          <div class="block-btn-center">
             <a class="button button-block button-calm" ng-click="modal.show()">
                 Editar perfil
@@ -40,33 +33,24 @@
         </ion-header-bar>
 
         <ion-content class="padding">
+		
             <div class="list">
                 <label class="item item-input item-stacked-label">
                   <span class="input-label">Nome</span>
-                  <input type="text" value="Filipe Raiz">
+                  
+				  <input type="text" ng-model="perfil.cliente.nome" value="{{perfil.cliente.nome}}">
                 </label>
                 <label class="item item-input item-stacked-label">
                   <span class="input-label">Email</span>
-                  <input type="email"  value="filiperaiz@gmail.com">
+                  <input type="email" ng-model="perfil.cliente.email" value="{{perfil.cliente.email}}">
                 </label>
                 <label class="item item-input item-stacked-label">
-                  <span class="input-label">Telefone</span>
-                  <input type="tel" value="12312412412">
+                  <span class="input-label">Celular</span>
+                  <input type="tel" ng-model="perfil.cliente.celular" value="{{perfil.cliente.celular}}">
                 </label>
-                <label class="item item-input item-stacked-label">
-                  <span class="input-label">Senha</span>
-                  <input type="password" value="********">
-                </label>
-                <label class="item item-input item-stacked-label">
-                  <span class="input-label">Confirmar senha</span>
-                  <input type="password" value="********">
-                </label>
-
-
-
 
                <div class="block-btn-center">
-                    <a class="button button-block button-balanced" ng-click="createContact(newUser)">
+                    <a class="button button-block button-balanced" ng-click="altCliente()">
                        Salvar
                     </a>
                 </div>

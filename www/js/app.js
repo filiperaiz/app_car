@@ -5,7 +5,9 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('starter', ['ionic', 'starter.controllers'])
+//cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+
+angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {
@@ -23,6 +25,20 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 })
 
+.directive("navigateTo",function($ionicGesture) {
+	return {
+	  restrict: 'A',
+	  link:function ($scope,$element,$attr) {
+		var tapHandler = function(e) {
+		  var inAppBrowser = window.open(encodeURI($attr.navigateTo),'_blank','location=yes','toolbar=yes');
+		};
+		var tapGesture = $ionicGesture.on('tap',tapHandler,$element);
+		$scope.$on('$destroy', function() {
+		  $ionicGesture.off(tapGesture,'tap',tapHandler);
+		});
+	  }
+	}
+})
 
 .config(function($stateProvider, $urlRouterProvider) {
 
@@ -31,12 +47,25 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     // Set up the various states which the app can be in.
     // Each state's controller can be found in controllers.js
     $stateProvider
+	// Tela de login
+    .state('login', {
+		url: '/login',
+		templateUrl: 'templates/login.html',
+		controller: 'loginCtrl'
+	})
 
+    .state('cadastrar', {
+		url: '/cadastrar',
+        templateUrl: 'templates/cadastrar.html',
+        controller: 'cadastrarCtrl'
+    })
+			
     // setup an abstract state for the tabs directive
         .state('tab', {
         url: '/tab',
         abstract: true,
-        templateUrl: 'templates/tabs.html'
+        templateUrl: 'templates/tabs.html',
+		controller: 'principalCtrl'
     })
 
     // Each tab has its own nav history stack:
@@ -121,7 +150,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
-
     .state('tab.perfil', {
         url: '/perfil',
         views: {
@@ -132,8 +160,26 @@ angular.module('starter', ['ionic', 'starter.controllers'])
         }
     })
 
-
-
+	.state('tab.img', {
+        url: '/img/:id',
+        views: {
+            'tab-alert': {
+                templateUrl: 'templates/tab-img-alert.html',
+                controller: 'alertImgCtrl'
+            }
+        }
+    })
+	
+	.state('tab.txt', {
+        url: '/txt/:id',
+        views: {
+            'tab-alert': {
+                templateUrl: 'templates/tab-txt-alert.html',
+                controller: 'alertTxtCtrl'
+            }
+        }
+    })
+	
     .state('tab.alert', {
         url: '/alert',
         views: {
@@ -145,6 +191,6 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     });
 
     // if none of the above states are matched, use this as the fallback
-    $urlRouterProvider.otherwise('/tab/principal');
+    $urlRouterProvider.otherwise('login');
 
 });

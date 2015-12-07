@@ -4,30 +4,28 @@
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
-                  Selecione um assunto
+                  Selecione um departamento
                 </div>
-                <select>
+                <select ng-model="contato.departamento">
                     <option>Selecione</option>
-                    <option>assunto 1</option>
-                    <option>assunto 2</option>
-                    <option>assunto 3</option>
-                    <option>assunto 4</option>
-
+                    <option value="oficina">Oficina</option>
+                    <option value="vendas">Vendas</option>
+                    <option value="pecas">Peças</option>
                 </select>
             </label>
 
             <label class="item item-input">
-                <span class="input-label">Nome</span>
-                <input type="text" placeholder="">
+                <span class="input-label">Assunto</span>
+                <input type="text" ng-model="contato.assunto">
             </label>
 
             <label class="item item-input">
-                <textarea placeholder="Mensagem" rows="6"></textarea>
+                <textarea placeholder="Mensagem" rows="6" ng-model="contato.mensagem"></textarea>
               </label>
 
 
            <div class="block-btn-center">
-                <a class="button button-block button-balanced" ng-click="">
+                <a class="button button-block button-balanced" ng-click="insContato()">
                    Enviar
                 </a>
             </div>

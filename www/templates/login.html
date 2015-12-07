@@ -1,0 +1,64 @@
+<ion-view title="Bem-vindo">
+    <ion-content class="bg-app widget-welcome" scroll="false">
+        <div class="bg-logo">
+            <img src="img/bg-logo.png" alt="">
+        </div>
+        <div class="form-login">
+            <div class="list list-inset">
+                <label class="item item-input">
+                    <input type="email" placeholder="Email" ng-model="login.email">
+                </label>
+                <label class="item item-input">
+                    <input type="password" placeholder="senha" ng-model="login.senha">
+                </label>
+            </div>
+
+            <div class="block-btn-center">
+                <a class="button button-block button-balanced" ng-click="getLogin()" ng-disabled="!login.email || !login.senha">
+                Entrar
+                </a>
+            </div>
+        </div>
+
+        <div class="cadastro">
+            <div class="block-btn-center">
+                <a class="button button-outline button-block button-light" href="#/cadastrar">
+                    Cadastre-se
+                </a>
+            </div>
+        </div>
+
+        <div class="forgot">
+            <div class="block-btn-center">
+                <a class="button button-block button-clear button-dark " ng-click="modal.show()">
+                    Esqueceu sua senha?
+                </a>
+            </div>
+        </div>
+
+    </ion-content>
+</ion-view>
+
+
+<script id="templates/modal-esquecisenha.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+            <h1 class="title">Recuperar senha</h1>
+            <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
+        </ion-header-bar>
+        <ion-content class="padding">
+            <div class="list">
+                <label class="item item-input item-stacked-label">
+                    <span class="input-label">Email</span>
+                    <input type="email" placeholder="informe seu email" ng-model="recuperar.email">
+                </label>
+				
+                <div class="block-btn-center">
+                    <a class="button button-block button-balanced" ng-click="recuperarLogin()">
+                       Enviar
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+    </ion-modal-view>
+</script>

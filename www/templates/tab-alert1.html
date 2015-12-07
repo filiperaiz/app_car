@@ -1,0 +1,15 @@
+<ion-view view-title="Alertas">
+    <ion-content>
+        <div class="card" ng-repeat="alerta in alertas">
+            <div class="item item-divider">
+                {{alerta.titulo}}
+            </div>
+            <div class="item item-text-wrap">
+                {{alerta.titulo}}	
+				<span ng-show="{{alerta.texto_botao}}">
+				<a navigate-To="{{alerta.link_notificacao}}" class="button button-block button-balanced">{{alerta.texto_botao}}</a>
+				</span>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>
