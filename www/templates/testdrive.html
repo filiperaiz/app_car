@@ -1,23 +1,23 @@
 
-<ion-view view-title="Seguro">
+<ion-view view-title="Test Drive">
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
                   Selecione um carro
                 </div>
-                <select ng-model="seguro.veiculo">
+                <select ng-model="testdrive.veiculo">
 						<option value="">{{sel_veiculo}}</option>
-						<option ng-repeat="veiculo in veiculos" value="{{veiculo.id_veiculo_app}}">{{veiculo.modelo}} [{{veiculo.placa}}]</option>
+						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
 				</select>
             </label>
 
             <label class="item item-input">
-                <textarea placeholder="Observações" rows="6" ng-model="seguro.observacoes"></textarea>
+                <textarea placeholder="Observações" rows="6" ng-model="testdrive.observacoes"></textarea>
               </label>
            <div class="block-btn-center">
-                <a class="button button-block button-balanced" ng-disabled="!seguro.veiculo" ng-click="insSeguro()">
-                   Solicitar orçamento
+                <a class="button button-block button-balanced" ng-disabled="!testdrive.veiculo" ng-click="insTestDrive()">
+                   Agendar test drive
                 </a>
             </div>
         </div>

@@ -16,7 +16,7 @@
                 <textarea placeholder="Observações" rows="6" ng-model="funilaria.observacoes"></textarea>
               </label>
            <div class="block-btn-center">
-                <a class="button button-block button-balanced" ng-click="insFunilaria()">
+                <a class="button button-block button-balanced" ng-disabled="!funilaria.veiculo" ng-click="insFunilaria()">
                    Agendar orçamento
                 </a>
             </div>

@@ -109,6 +109,36 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
+	
+	.state('tab.testdrive', {
+        url: '/testdrive',
+        views: {
+            'tab-principal': {
+                templateUrl: 'templates/testdrive.html',
+                controller: 'testdriveCtrl'
+            }
+        }
+    })
+	
+	.state('tab.jornal', {
+        url: '/jornal',
+        views: {
+            'tab-principal': {
+                templateUrl: 'templates/jornal.html',
+                controller: 'jornalCtrl'
+            }
+        }
+    })
+	
+	.state('tab.carrosnovos', {
+                url: '/carrosnovos',
+                views: {
+                    'tab-principal': {
+                        templateUrl: 'templates/carrosnovos.html',
+                        controller: 'carrosNovosCtrl'
+                    }
+                }
+    })
 
     .state('tab.avaliacao', {
         url: '/avaliacao',

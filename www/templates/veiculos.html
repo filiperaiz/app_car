@@ -21,7 +21,7 @@
 <script id="templates/modal-addcar.html" type="text/ng-template">
     <ion-modal-view>
         <ion-header-bar class="bar bar-header bar-calm">
-            <h1 class="title">Adicionar carro</h1>
+            <h1 class="title">Adicionar veículo</h1>
             <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
         </ion-header-bar>
         <ion-content class="padding">
@@ -44,7 +44,6 @@
                         Ano/Fabricação
                     </div>
                     <select ng-model="veiculo.ano_fabricacao">
-                        <option>Selecione</option>
                         <option>2014</option>
                         <option>2015</option>
                         <option>2016</option>
@@ -55,8 +54,7 @@
                         Ano/Modelo
                     </div>
                     <select ng-model="veiculo.ano_modelo">
-                        <option>Selecione</option>
-                        <option>2014</option>
+                         <option>2014</option>
                         <option>2015</option>
                         <option>2016</option>
                     </select>

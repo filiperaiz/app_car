@@ -32,9 +32,10 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 		webDados.setCliente("insCliente.php",$scope.cliente).then(function(dados){
 			console.log(dados);
 			if (dados.data!=0){
-				$location.url('/login');
+				$location.url('/tab/principal');
+				window.localStorage.setItem("usuario", dados.data);
 				//$cordovaDialogs.alert("Cadastro efetuado com sucesso!","Mensagem");
-				$cordovaToast.showLongCenter('Cadastro efetuado com sucesso!');
+				//$cordovaToast.showLongCenter('Cadastro efetuado com sucesso!');
 			}else{
 				console.log('erro');
 				$scope.retorno = "erro";
@@ -258,7 +259,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
     });
 })
 
-.controller('funilariaCtrl', function($scope, $http, webDados) {
+.controller('funilariaCtrl', function($scope, $http, $cordovaDialogs, $location, webDados) {
 	var id_user = window.localStorage.getItem("usuario");
 	console.log('usuario:'+id_user);
 	webDados.getVeiculos("getVeiculo.php?id="+id_user).then(function(dados){
@@ -272,8 +273,37 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 			$http.post(link, {'id': id_user,'codigo': $scope.funilaria.veiculo,'observacoes': $scope.funilaria.observacoes})
 			.success(function (funilaria,status,headers,config){
 				console.log('retorno:'+funilaria);
+				$location.url('/tab/principal');
+				$cordovaDialogs.alert("Cadastro efetuado! Aguarde nosso contato","Mensagem");
 			});
 	};
+})
+
+.controller('carrosNovosCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+  $scope.nextSlide = function() {
+    $ionicSlideBoxDelegate.next();
+  }
+})
+
+.controller('testdriveCtrl', function($scope, webDados) {
+	webDados.getModelos("getModelos.php?id=4").then(function(dados){$scope.modelos = dados;});
+	var id_user = window.localStorage.getItem("usuario");
+	$scope.seguro = [];
+	$scope.insSeguro = function(){
+			console.log($scope.seguro);	
+			var link = 'http://www.alemanhafichas.com.br/app_alemanha/insSeguro.php';
+			$http.post(link, {'id': id_user,'codigo': $scope.seguro.veiculo,'observacoes': $scope.seguro.observacoes})
+			.success(function (seguro,status,headers,config){
+				console.log('retorno:'+seguro);
+				$location.url('/tab/principal');
+				$cordovaDialogs.alert("Cadastro efetuado! Aguarde nosso contato","Mensagem");
+			});
+	};
+})
+
+.controller('jornalCtrl', function($scope) {
+	
 })
 
 .controller('avaliacaoCtrl', function($scope, webDados) {
@@ -297,7 +327,7 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 	};
 })
 
-.controller('seguroCtrl', function($scope, $http, webDados) {
+.controller('seguroCtrl', function($scope, $http, $cordovaDialogs, $location, webDados) {
 	var id_user = window.localStorage.getItem("usuario");
 	webDados.getVeiculos("getVeiculo.php?id="+id_user).then(function(dados){
 		$scope.veiculos = dados;
@@ -310,6 +340,8 @@ angular.module('starter.controllers', ['ionic','ngCordova'])
 			$http.post(link, {'id': id_user,'codigo': $scope.seguro.veiculo,'observacoes': $scope.seguro.observacoes})
 			.success(function (seguro,status,headers,config){
 				console.log('retorno:'+seguro);
+				$location.url('/tab/principal');
+				$cordovaDialogs.alert("Cadastro efetuado! Aguarde nosso contato","Mensagem");
 			});
 	};
 })
