@@ -1,6 +1,7 @@
 <ion-view title="Cadastre-se">
     <ion-content class="bg-app widget-welcome" scroll="false">
-        <div class="form-cadastrar">
+        <form>
+		<div class="form-cadastrar">
             <div class="list list-inset">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Nome</span>
@@ -8,24 +9,31 @@
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Email</span>
-                    <input type="email" placeholder="Digite seu email" ng-model="cliente.email">
+                    <input type="email" name="email" id="email" onblur="is_email(document.getElementById('email').value)" placeholder="Digite seu email" ng-model="cliente.email">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Celular</span>
-                    <input type="tel" placeholder="Digite o número" ng-model="cliente.celular">
+					<input type="tel" placeholder="(99) 99999-9999" ng-model="cliente.celular" name="telefone" id="telefone" size="25" maxlength="15" onKeyPress="return digitos(event, this);" onKeyUp="Mascara('telefone',this,event);">
                 </label>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Senha</span>
                     <input type="password" placeholder="Digite uma senha" ng-model="cliente.senha">
                 </label>
             </div>
+			<div class="alert alert-danger centro" style="visibility: hidden" id="alerta">
+				<div>
+					Email inválido
+				</div>
+			</div>
             <div class="block-btn-center">
                 <a class="button button-block button-balanced" ng-click="insCliente()" ng-disabled="!cliente.nome || !cliente.email || !cliente.senha || !cliente.celular">
                    Cadastrar
                 </a>
             </div>
         </div>
+		</form>
     </ion-content>
 </ion-view>
 
+	
 

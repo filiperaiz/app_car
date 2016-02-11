@@ -37,18 +37,46 @@ angular.module('starter.services', [])
     }
 })
 
+.factory('$localstorage', ['$window', function($window) {
+  return {
+    set: function(key, value) {
+      $window.localStorage[key] = value;
+    },
+    get: function(key, defaultValue) {
+      return $window.localStorage[key] || defaultValue;
+    },
+    setObject: function(key, value) {
+      $window.localStorage[key] = JSON.stringify(value);
+    },
+    getObject: function(key) {
+      return JSON.parse($window.localStorage[key] || '{}');
+    }
+  }
+}])
+
+.factory('MySimulatedSlowHTTPService', function($q, $timeout) {
+    var deferred = $q.defer();
+    $timeout(function() {
+        // Simulated slow fetch from an HTTP server
+        deferred.resolve(['Item 1', 'Item 2', 'Item 3'])
+    }, 3000);
+    return deferred.promise;
+})
+
+
 .service('webDados', function($http, $location) {
 	return {
 		getLogin: function(email,senha){
 			email = email.toLowerCase();
 			var link = "http://alemanhafichas.com.br/app_alemanha/getLogin.php?e="+email+"&s="+senha; 
 			return $http.get(link).then(function(response){
-				if(response.data==0){
+				return response.data;
+				/*if(response.data==0){
 					return response.data;
 				}else{
 					login = response.data[0].id;
 					return login;					
-				}
+				}*/
 			});
 		},
 		setToken: function(url,token){
@@ -81,7 +109,7 @@ angular.module('starter.services', [])
 		},
 		setVeiculo: function(url,usuario,veiculo){
 			var link = 'http://www.alemanhafichas.com.br/app_alemanha/'+url;
-			return $http.post(link, {'id': usuario,'modelo': veiculo.modelo,'placa': veiculo.placa,'ano_fabricacao': veiculo.ano_fabricacao,'ano_modelo': veiculo.ano_modelo})
+			return $http.post(link, {'id': usuario,'modelo': veiculo.modelo,'placa': veiculo.placa,'ano_fabricacao': veiculo.ano_fabricacao,'ano_modelo': veiculo.ano_modelo,'km_atual': veiculo.km_atual,'data_seguro': veiculo.data_seguro,'nome_seguradora': veiculo.nome_seguradora})
 			.success(function (veiculo){
 				return veiculo.data;
 			});

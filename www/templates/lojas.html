@@ -1,12 +1,18 @@
 <ion-view view-title="Lojas">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding">
         <div class="list" ng-repeat="loja in lojas">
             <div class="item item-thumbnail-left item-car" href="#">
-                <img src="{{loja.image}}">
-                <h2>{{loja.nome}}</h2>
-                <p>{{loja.endereco}} - CEP 64045-000</p>
-                <p>{{loja.cidade}}/{{loja.estado}} - {{loja.fone}}</p>
-                <p>
+                <img ng-src="{{loja.image}}">
+                <h4>{{loja.nome}}</h4>
+                <p>{{loja.endereco}}</p>
+				<p>Cep: {{loja.cep}}</p>
+                <p>{{loja.cidade}}-{{loja.estado}} - {{loja.fone}}</p>
+                <p>	
 					<a navigate-To="https://www.google.com.br/maps/place/5%C2%B004'54.2%22S+42%C2%B045'59.7%22W/@-5.08171,-42.766585,18z/data=!3m1!4b1!4m2!3m1!1s0x0:0x0" class="button icon-left ion-ios-navigate button-clear button-calm">Como chegar?</a>
                 </p>
             </div>

@@ -1,0 +1,34 @@
+<ion-view view-title="Veiculos Novos">
+    <ion-content class="padding slide-car">
+        <ion-slide-box on-slide-changed="slideHasChanged(index)">
+            
+			
+            <ion-slide ng-repeat="modelo in modelos">	
+                <div class="box item-slide">
+                    <img ng-src="{{modelo.img_modelo}}">
+                    <h2 class="name-car">{{modelo.modelo}}</h2>
+					<div class="row">
+                        <div class="col col-50">
+                            <a class="button button-block button-stable"  ng-click="ver_{{modelo.id_modelo_veiculo}} = ! ver_{{modelo.id_modelo_veiculo}}">
+                                Detalhes
+                            </a>
+                        </div>
+
+                        <div class="col col-50">
+                            <a class="button button-block button-balanced" href="#/tab/avaliacao/{{modelo.id_modelo_veiculo}}">
+                                Eu quero
+                            </a>
+                        </div>
+                    </div>
+					<div class="detail" ng-show="ver_{{modelo.id_modelo_veiculo}}">
+                        <a href="#" class="close-detail" ng-click="ver_{{modelo.id_modelo_veiculo}} = ! ver_{{modelo.id_modelo_veiculo}}"><i class="icon ion-close-circled"></i></a>
+
+                        <p>{{modelo.id_modelo_veiculo}}{{modelo.modelo}}</p>
+                    </div>
+                </div>
+            </ion-slide>
+            
+			
+        </ion-slide-box>
+    </ion-content>
+</ion-view>

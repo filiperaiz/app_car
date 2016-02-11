@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.appcar191321" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="br.com.alemanhaveiculos.appdealer" version="0.0.5" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Alemanha</name>
   <description>Aplicativo da alemanha veículos</description>
   <author email="" href="">Ionic Framework Team</author>
@@ -13,6 +13,10 @@
   <preference name="BackupWebStorage" value="none"/>
   <preference name="SplashScreen" value="screen"/>
   <preference name="SplashScreenDelay" value="5000"/>
+  <preference name="BackupWebStorage" value="local"/>
+  <preference name="orientation" value="portrait" />
+  
+
   <feature name="StatusBar">
     <param name="ios-package" value="CDVStatusBar" onload="true"/>
   </feature>

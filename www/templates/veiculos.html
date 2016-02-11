@@ -1,5 +1,12 @@
-<ion-view view-title="Veículos">
+
+<ion-view view-title="Veículos" cache-view="false">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding">
+	
         <div class="block-btn-center">
             <a class="button button-block button-calm" ng-click="modal.show()">
                 Adicionar veículo
@@ -7,8 +14,8 @@
         </div>
         <div class="list" ng-repeat="veiculo in veiculos">
 			<span ng-show="{{veiculo.id_veiculo_app}}">
-				<a class="item item-thumbnail-left item-car" href="#">
-					<img src="{{veiculo.img_veiculo}}">
+				<a class="item item-thumbnail-left item-car" href="#/tab/editVeiculo/{{veiculo.id_veiculo_app}}">
+					<img ng-src="{{veiculo.img_veiculo}}">
 					<h2>{{veiculo.modelo}}</h2>
 					<p><b>Placa:</b>{{veiculo.placa}}</p>
 					<p><b>Ano:</b> {{veiculo.ano_fabricacao}}/{{veiculo.ano_modelo}} </p>
@@ -24,29 +31,47 @@
             <h1 class="title">Adicionar veículo</h1>
             <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
         </ion-header-bar>
-        <ion-content class="padding">
-            <div class="list">
+        <ion-content class="padding direita">
+            <form>
+			<div class="list">
                 <label class="item item-input item-select">
                     <div class="input-label">
-                        Selecione um carro
+                        Veículo
                     </div>
                     <select ng-model="veiculo.modelo">
-						<option value="">{{sel}}</option>
+						<option value="">Selecione</option>
 						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
 					</select>
                 </label>
                 <label class="item item-input">
                     <span class="input-label">Placa</span>
-                    <input ng-model="veiculo.placa" type="text" placeholder="XXX-0000">
+				<input type="text" ng-model="veiculo.placa" name="placa" id="placa" size="25" maxlength="8" onKeyUp="Mascara('placa',this,event);" style="text-transform: uppercase;" class="right" ng-blur="buscaDados()">
+                    <!--<input ng-model="veiculo.placa" type="text" placeholder="XXX-0000" maxlength="8" data-minlength="8" onkeypress="mascara(this, '###-####')" style="text-transform: uppercase;" class="right">-->
                 </label>
+				
                 <label class="item item-input item-select">
                     <div class="input-label">
                         Ano/Fabricação
                     </div>
                     <select ng-model="veiculo.ano_fabricacao">
-                        <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
+						<option value="">Selecione</option>
+						<option>2016</option>
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+						<option>2012</option>
+						<option>2011</option>
+						<option>2010</option>
+						<option>2009</option>
+						<option>2008</option>
+						<option>2007</option>
+						<option>2006</option>
+						<option>2005</option>
+						<option>2004</option>
+						<option>2003</option>
+						<option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
                     </select>
                 </label>
                 <label class="item item-input item-select">
@@ -54,10 +79,37 @@
                         Ano/Modelo
                     </div>
                     <select ng-model="veiculo.ano_modelo">
-                         <option>2014</option>
-                        <option>2015</option>
-                        <option>2016</option>
+                        <option value="">Selecione</option>
+						<option>2016</option>
+						<option>2015</option>
+						<option>2014</option>
+						<option>2013</option>
+						<option>2012</option>
+						<option>2011</option>
+						<option>2010</option>
+						<option>2009</option>
+						<option>2008</option>
+						<option>2007</option>
+						<option>2006</option>
+						<option>2005</option>
+						<option>2004</option>
+						<option>2003</option>
+						<option>2002</option>
+                        <option>2001</option>
+                        <option>2000</option>
                     </select>
+                </label>
+				<label class="item item-input">
+                    <span class="input-label">Km Atual</span>
+					<input type="number" placeholder="00000" ng-model="veiculo.km_atual" class="right">
+                </label>
+				<label class="item item-input">
+                    <span class="input-label">Venc. Seguro</span>
+				<input type="date" ng-model="veiculo.data_seguro" name="data_seguro" class="right">
+                </label>
+				<label class="item item-input">
+                    <span class="input-label">Seguradora</span>
+					<input type="text" ng-model="veiculo.nome_seguradora" placeholder="nome da seguradora" name="data_seguro" class="right">
                 </label>
                 <div class="block-btn-center">
                     <a class="button button-block button-balanced" ng-click="insVeiculo()" ng-disabled="!veiculo.modelo || !veiculo.placa || !veiculo.ano_fabricacao || !veiculo.ano_modelo">
@@ -66,6 +118,9 @@
                 </div>
 				{{retorno}}
             </div>
+			</form>
         </ion-content>
     </ion-modal-view>
+
 </script>
+

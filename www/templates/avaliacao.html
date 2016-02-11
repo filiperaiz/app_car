@@ -1,27 +1,47 @@
 <ion-view view-title="Comprar carro">
-    <ion-content class="padding">
-        <div class="list">
-            <label class="item item-input item-select">
+	<ion-nav-buttons side="primary">
+	  <a class="button icon-left button-clear" href="#/tab/carrosnovos"><i class="icon ion-ios-arrow-back"></i> Voltar</a>
+    </ion-nav-buttons>
+    <ion-content class="padding direita">
+        <form name="contactForm">
+		<div class="list">
+            
+			<label class="item item-input">
                 <div class="input-label">
-                    Selecione um carro
+                    Veículo
                 </div>
-                <select ng-model="novo.modelo">
-						<option value="">{{sel}}</option>
-						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
-				</select>
+				<input ng-model="modelo.id_modelo_veiculo" type="hidden" value="{{modelo.id_modelo_veiculo}}">
+				<input ng-model="modelo.modelo" type="text" value="{{modelo.modelo}}" class="right" id="readonly" readonly>
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
-                   Valor da entrada
+                    Perfil cliente
                 </div>
-                <input ng-model="novo.entrada" type="text" placeholder="0000">
+                <select ng-model="novo.perfil" name="perfil" required>
+					<option value="">Selecione</option>
+					<option>Pessoa Física</option>
+                    <option>Pessoa Jurídica</option>
+                    <option>Taxista</option>
+                    <option>Frontista</option>
+                    <option>Produtor Rural</option>
+                    <option>PNE</option>
+                </select>
+            </label>
+			<label class="item item-input">
+                <div class="input-label">
+                   Valor entrada
+                </div>
+				<!--<input type="text" ng-model="novo.entrada" name="valor" onkeypress="mascara_moeda(this, mvalor);" onkeyup="mascara_moeda(this, mvalor);" class="right">-->
+				
+                <input ng-model="novo.entrada" type="number" placeholder="R$ 0000" class="right" name="entrada" required>
             </label>
             <label class="item item-input item-select">
                 <div class="input-label">
                     Parcelas
                 </div>
-                <select ng-model="novo.parcela">
-                    <option>À vista</option>
+                <select ng-model="novo.parcelas" name="parcelas" required>
+					<option value="">Selecione</option>
+					<option>à vista</option>
                     <option>12 meses</option>
                     <option>18 meses</option>
                     <option>24 meses</option>
@@ -31,58 +51,27 @@
                 </select>
             </label>
         </div>
-        <div class="box-avaliar">
+		<div class="box-avaliar">
             <div class="link-button">
                 <label>Clique aqui e avalie seu carro
-                    <input type="checkbox" ng-model="mustShow" />
+                    <input type="checkbox" ng-model="mustShow"/>
                 </label>
             </div>
             <div class="more-fields" ng-show="mustShow">
                 <h3>Preencha os campos abaixo </h3>
                 <div class="list">
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/frente.jpg">
-                        <h2>Foto da frente</h2>
-                        <input type="file" name="image" id="image" ng-file-select="onFileSelect($files)">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/interna.jpg">
-                        <h2>Foto interna</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/lateral_direita.jpg">
-                        <h2>Foto da lateral direita</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/lateral_esquerda.jpg">
-                        <h2>Foto da lateral esquerda</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/motor.jpg">
-                        <h2>Foto do motor</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/painel.jpg">
-                        <h2>Foto do painel</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                    <div class="item item-thumbnail-left item-car" href="#">
-                        <img src="img/model-pic-car/traseira.jpg">
-                        <h2>Foto da traseira</h2>
-                        <input type="file" placeholder="">
-                    </div>
-                </div>
-                <div class="list">
-                    <label class="item item-input item-select">
+                    <label class="item item-input">
                         <div class="input-label">
+                            Veículo
+                        </div>
+                         <input type="text" ng-model="novo.veiculo" class="right">
+                    </label>
+					<label class="item item-input item-select">  
+						<div class="input-label">
                             Portas
                         </div>
-                        <select>
-                            <option>Selecione</option>
+                        <select ng-model="novo.portas">
+                            <option value="">Selecione</option>
                             <option>2</option>
                             <option>3</option>
                             <option>4</option>
@@ -93,40 +82,102 @@
                         <div class="input-label">
                             Combustivel
                         </div>
-                        <select>
-                            <option>Selecione</option>
+                        <select ng-model="novo.combustivel">
+                            <option value="">Selecione</option>
                             <option>Flex</option>
                             <option>Gasolina</option>
                             <option>Alcool</option>
+                            <option>Diesel</option>							
                         </select>
                     </label>
-                    <label class="item item-input item-stacked-label">
-                        <span class="input-label">KM</span>
-                        <input type="num" placeholder="00000">
+					<label class="item item-input item-select">
+                        <div class="input-label">
+                            Câmbio
+                        </div>
+                        <select ng-model="novo.cambio">
+                            <option value="">Selecione</option>
+                            <option>Mecânico</option>
+                            <option>Automático</option>
+                        </select>
+                    </label>
+					<label class="item item-input">  
+						<div class="input-label">
+                            Quilometragem
+                        </div>
+                        <input type="number" placeholder="00000km" class="right" ng-model="novo.quilometragem">
                     </label>
                     <label class="item item-input item-select">
                         <div class="input-label">
-                            Ano/Versão
+                            Ano/Fabricação
                         </div>
-                        <select>
-                            <option>Selecione</option>
-                            <option>2014</option>
-                            <option>2015</option>
+                        <select ng-model="novo.ano_fab">
+                            <option value="">Selecione</option>
                             <option>2016</option>
+							<option>2015</option>
+							<option>2014</option>
+							<option>2013</option>
+							<option>2012</option>
+							<option>2011</option>
+							<option>2010</option>
+							<option>2009</option>
+							<option>2008</option>
+							<option>2007</option>
+							<option>2006</option>
+							<option>2005</option>
+							<option>2004</option>
+							<option>2003</option>
+							<option>2002</option>
+							<option>2001</option>
+							<option>2000</option>
+                        </select>
+                    </label>
+					 <label class="item item-input item-select">
+                        <div class="input-label">
+                            Ano/Modelo
+                        </div>
+                        <select ng-model="novo.ano_mod">
+                            <option value="">Selecione</option>
+                            <option>2016</option>
+							<option>2015</option>
+							<option>2014</option>
+							<option>2013</option>
+							<option>2012</option>
+							<option>2011</option>
+							<option>2010</option>
+							<option>2009</option>
+							<option>2008</option>
+							<option>2007</option>
+							<option>2006</option>
+							<option>2005</option>
+							<option>2004</option>
+							<option>2003</option>
+							<option>2002</option>
+							<option>2001</option>
+							<option>2000</option>
                         </select>
                     </label>
                 </div>
                 <div class="list">
                     <label class="item item-input">
-                        <textarea placeholder="Descreva aqui os acessórios que o seu carro possui" rows="6"></textarea>
+                        <textarea placeholder="Descreva os detalhes do veículo e acessórios" rows="6" ng-model="novo.obs"></textarea>
                     </label>
                 </div>
             </div>
         </div>
+		<div ng-show="contactForm.$invalid && contactForm.$dirty" class="alert alert-danger">
+		<div ng-show="contactForm.entrada.$error.required">
+			Campo Valor entrada é obrigatório
+		  </div>
+		  <div ng-show="contactForm.parcelas.$error.required">
+			Campo parcelas é obrigatório
+		  </div>
+		</div>
+
         <div class="block-btn-center">
-            <a class="button button-block button-balanced" ng-click="">
+            <a class="button button-block button-balanced" type="submit" ng-model="sub" ng-click="contactForm.$valid && insQueroNovo()" ng-disabled="!novo.perfil || !novo.entrada || !novo.parcelas">
                 Enviar proposta
             </a>
         </div>
+		</form>
     </ion-content>
 </ion-view>

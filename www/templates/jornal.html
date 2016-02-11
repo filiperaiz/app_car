@@ -1,8 +1,14 @@
-
 <ion-view view-title="Jornal MN">
-<ion-content class="">
-<iframe width="100%" height="100%" src="http://www.jornal.meionorte.com" frameborder="0" allowfullscreen></iframe>
-</ion-content>
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
+
+	<ion-content class="jornal">
+		<p ng-bind-html="link_jornal">
+		<iframe src="http://www.jornal.meionorte.com/api/assinante/acesso/externo?email=adrianoefren@gmail.com&hash=asdqwo2132bcsansad0223sadraqw99mzbmxuuhyg" style="border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%">
+	</ion-content>
 </ion-view>
 
 

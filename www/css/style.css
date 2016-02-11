@@ -18,13 +18,16 @@
 }
 
 .forgot{
-
-    position: absolute;
+    position: relative;
     bottom: 0;
     width: 100%;
     text-align: center;
     left: 0;
     right: 0;
+}
+.platform-android .bar .title{
+	text-align:center;
+	left:50px;
 }
 
 .forgot .button{
@@ -124,7 +127,6 @@
     color: #0c60ee !important;
 }
 
-
 .slide-car .scroll, .slider {
   height: 100%;
 }
@@ -143,7 +145,7 @@
 
 .item-slide .detail{
     position: absolute;
-       top: 50px;
+       top: 18px;
        background-color: rgba(0, 0, 0, 0.7);
        border-radius: 5px;
        min-height: 200px;
@@ -157,14 +159,70 @@
 }
 
 .item-slide .detail .close-detail{
-    position: absolute;
-    top: -20px;
+    position: absolute; 
+    top: -15px;
     right: 0;
-    font-size: 30px;
+    font-size: 26px;
     color: #F00;
     z-index: 999;
     background: #FFF;
     border-radius: 85px;
-    line-height: 40px;
-    height: 30px;
+    line-height: 20px;
+    height: 26px;
+}
+.right{
+	text-align:-webkit-right;
+	text-align:right;
+}
+.centro{
+	text-align:-webkit-center;
+	text-align:center;
+}
+.item-select select{
+	padding: 0 27px 0 16px;
+}
+.direita input::-webkit-input-placeholder {
+    direction: rtl;
+    text-align: right;
+}
+
+.enquete{
+	padding:10px 15px 0px 5px;
+}
+#readonly{
+	background-color:#FFF;
+}
+::-webkit-input-placeholder {
+   text-align: center;
+}
+.alert{padding:10px;margin-bottom:20px;margin-top:20px;border:1px solid transparent;border-radius:4px}
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+.caixa_alerta{
+	margin-top:50%;
+	border:0px;
+}
+i.ion-archive{
+font-size: 50px;
+color : #A2A2A2;
+}
+.jornal{
+	top:34px;
+	text-align:center;
+}
+.lendo{
+	margin-top:50%;
+	border:0px;
+}
+.esq{
+	text-align:left;
+}
+.logo-seguro{
+	margin:10px;
+}
+.slider-pager{
+	height:3px;
 }

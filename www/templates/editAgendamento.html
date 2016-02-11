@@ -1,0 +1,81 @@
+<ion-view view-title="Editar agendamento">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
+    <ion-content class="padding">
+            <div class="list">
+                <label class="item item-input">
+                    <div class="input-label">
+                      Veículo
+                    </div>
+					<input type="text" placeholder="" ng-model="agendar.modelo" value="{{agendar.modelo}}" id="readonly" class="right" readonly>
+                </label>
+
+                <label class="item item-input">
+                    <span class="input-label">KM atual</span>
+                    <input type="text" placeholder="00000" ng-model="agendar.km_atual" value="agendar.km_atual" class="right" formatar>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Serviço
+                    </div>
+					<select ng-model="agendar.servico"  ng-options="servico.servico as servico.servico for servico in servicos"></select>
+                </label>
+
+                <label class="item item-input item-select">
+                    <div class="input-label">
+                      Loja
+                    </div>
+					<select ng-model="agendar.loja"  ng-options="loja.nome as loja.nome for loja in lojas"></select>
+                </label>
+				
+				<label class="item item-input">
+                    <span class="input-label">Data</span>
+                    <input type="text" ng-model="agendar.data_agendamento" value="{{agendar.data_agendamento}}" class="right">
+                </label>
+				
+				<label class="item item-input item-select">
+                    <div class="input-label">
+                      Horário
+                    </div>
+                    <select ng-model="agendar.hora_agendamento">
+						<option>07:30</option>
+						<option>08:00</option>
+						<option>08:30</option>
+						<option>09:00</option>
+						<option>09:30</option>						
+						<option>10:00</option>
+						<option>10:30</option>
+						<option>11:00</option>
+						<option>11:30</option>
+						<option>14:00</option>
+						<option>14:30</option>
+						<option>15:00</option>
+						<option>15:30</option>
+						<option>16:00</option>
+						<option>16:30</option>
+						<option>17:00</option>
+						<option>17:30</option>						
+					</select>
+                </label>
+				<label class="item item-input">
+                    <textarea placeholder="Observações" rows="6" ng-model="agendar.obs_do_cliente">{{agendar.obs_do_cliente}}</textarea>
+                </label>
+
+               <div class="block-btn-center">
+                    <a class="button button-block button-balanced" ng-click="altAgendamento()" ng-disabled="!agendar.modelo || !agendar.km_atual">
+                       Alterar
+                    </a>
+                </div>
+				<div class="block-btn-center">
+                    <a class="button button-block button-assertive" ng-click="delAgendamento()" ng-confirm-box-click="Are you sure want to delete?">
+                       Apagar
+                    </a>
+                </div>
+            </div>
+        </ion-content>
+</ion-view>
+

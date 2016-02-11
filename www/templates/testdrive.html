@@ -1,23 +1,36 @@
 
-<ion-view view-title="Test Drive">
-    <ion-content class="padding">
+<ion-view view-title="Best Drive" hide-back-button="true">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
+</ion view>
+	
+	
+    <ion-content class="padding"> 
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
-                  Selecione um carro
+                  Veículo
                 </div>
                 <select ng-model="testdrive.veiculo">
-						<option value="">{{sel_veiculo}}</option>
+						<option value="">Selecione</option>
 						<option ng-repeat="modelo in modelos" value="{{modelo.id_modelo_veiculo}}">{{modelo.modelo}}</option>
 				</select>
             </label>
-
+			<label class="item item-input item-select">
+                <div class="input-label">
+                  Data
+                </div>
+                <input type="date" ng-model="testdrive.data" class="right">
+            </label>	
             <label class="item item-input">
-                <textarea placeholder="Observações" rows="6" ng-model="testdrive.observacoes"></textarea>
+                <textarea placeholder="Observações" rows="6" ng-model="testdrive.obs"></textarea>
               </label>
            <div class="block-btn-center">
-                <a class="button button-block button-balanced" ng-disabled="!testdrive.veiculo" ng-click="insTestDrive()">
-                   Agendar test drive
+                <a class="button button-block button-balanced" ng-disabled="!testdrive.veiculo || !testdrive.data" ng-click="insTestDrive()">
+                   Agendar best drive
                 </a>
             </div>
         </div>

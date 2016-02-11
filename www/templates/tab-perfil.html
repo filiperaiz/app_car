@@ -1,6 +1,12 @@
 
 <ion-view view-title="Perfil">
-    <ion-content class="padding">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+	<!--<a class="button button-clear" ng-click="loadUsuario()"><i class="icon ion-ios-loop"></i></a>-->
+    </ion-nav-buttons>
+	<ion-content class="padding">
         <div class="list">
           <label class="item item-input item-stacked-label">
             <span class="input-label">Nome</span>
@@ -20,7 +26,11 @@
                 Editar perfil
             </a>
         </div>
-
+		<div class="block-btn-center">
+            <a class="button button-block button-assertive" ng-click="desconectar()">
+                Desconectar
+            </a>
+        </div>
 
     </ion-content>
 </ion-view>
@@ -46,8 +56,11 @@
                 </label>
                 <label class="item item-input item-stacked-label">
                   <span class="input-label">Celular</span>
-                  <input type="tel" ng-model="perfil.cliente.celular" value="{{perfil.cliente.celular}}">
-                </label>
+                  <input type="tel" ng-model="perfil.cliente.celular" value="{{perfil.cliente.celular}}" name="telefone" id="telefone" size="25" maxlength="15" onKeyPress="return digitos(event, this);" onKeyUp="Mascara('telefone',this,event);">
+				  <!--
+				  <input type="text" name="telefone" id="telefone" size="25" maxlength="14" onKeyPress="return digitos(event, this);" onKeyUp="Mascara('telefone',this,event);" style="border:solid 1px #111">
+                -->
+				</label>
 
                <div class="block-btn-center">
                     <a class="button button-block button-balanced" ng-click="altCliente()">
@@ -58,5 +71,4 @@
         </ion-content>
     </ion-modal-view>
 </script>
-
 

@@ -1,0 +1,142 @@
+<ion-view view-title="Comprar carro">
+    <ion-content class="padding">
+        <div class="list">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Selecione um carro
+                </div>
+                <select ng-model="car.modelo">
+						<option ng-repeat="car in modelo" value="{{car.id_modelo_veiculo}}">{{car.modelo}}</option>
+				</select>
+            </label>
+            <label class="item item-input">
+                <div class="input-label">
+                   Valor da entrada
+                </div>
+                <input ng-model="novo.entrada" type="text" placeholder="R$ 0,00" class="right">
+            </label>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Parcelas
+                </div>
+                <select ng-model="novo.parcela">
+                    <option>À vista</option>
+                    <option>12 meses</option>
+                    <option>18 meses</option>
+                    <option>24 meses</option>
+                    <option>36 meses</option>
+                    <option>48 meses</option>
+                    <option>60 meses</option>
+                </select>
+            </label>
+        </div>
+        <div class="box-avaliar">
+            <div class="link-button">
+                <label>Clique aqui e avalie seu carro
+                    <input type="checkbox" ng-model="mustShow" />
+                </label>
+            </div>
+            <div class="more-fields" ng-show="mustShow">
+                <h3>Preencha os campos abaixo </h3>
+                <div class="list">
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/frente.jpg">
+                        <h2>Foto da frente</h2>
+                        <input type="file" name="image" id="image" ng-file-select="onFileSelect($files)">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/interna.jpg">
+                        <h2>Foto interna</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/lateral_direita.jpg">
+                        <h2>Foto da lateral direita</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/lateral_esquerda.jpg">
+                        <h2>Foto da lateral esquerda</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/motor.jpg">
+                        <h2>Foto do motor</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/painel.jpg">
+                        <h2>Foto do painel</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                    <div class="item item-thumbnail-left item-car" href="#">
+                        <img src="img/model-pic-car/traseira.jpg">
+                        <h2>Foto da traseira</h2>
+                        <input type="file" placeholder="">
+                    </div>
+                </div>
+                <div class="list">
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Portas
+                        </div>
+                        <select>
+                            <option>Selecione</option>
+                            <option>2</option>
+                            <option>3</option>
+                            <option>4</option>
+                            <option>5</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Combustivel
+                        </div>
+                        <select>
+                            <option>Selecione</option>
+                            <option>Flex</option>
+                            <option>Gasolina</option>
+                            <option>Alcool</option>
+                            <option>Diesel</option>							
+                        </select>
+                    </label>
+					<label class="item item-input item-select">
+                        <div class="input-label">
+                            Câmbio
+                        </div>
+                        <select>
+                            <option>Selecione</option>
+                            <option>Mecânico</option>
+                            <option>Automático</option>
+                        </select>
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">KM</span>
+                        <input type="num" placeholder="00000km" class="right">
+                    </label>
+                    <label class="item item-input item-select">
+                        <div class="input-label">
+                            Ano/Versão
+                        </div>
+                        <select>
+                            <option>Selecione</option>
+                            <option>2014</option>
+                            <option>2015</option>
+                            <option>2016</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="list">
+                    <label class="item item-input">
+                        <textarea placeholder="Descreva aqui os acessórios que o seu carro possui" rows="6"></textarea>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="block-btn-center">
+            <a class="button button-block button-balanced" ng-click="">
+                Enviar proposta
+            </a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,13 +1,17 @@
-
 <ion-view view-title="Funilaria">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
-                  Selecione um carro
+                  Veículo
                 </div>
                 <select ng-model="funilaria.veiculo">
-						<option value="">{{sel_veiculo}}</option>
+						<option value="">Selecione</option>
 						<option ng-repeat="veiculo in veiculos" value="{{veiculo.id_veiculo_app}}">{{veiculo.modelo}} [{{veiculo.placa}}]</option>
 				</select>
             </label>

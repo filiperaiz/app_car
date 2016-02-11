@@ -1,13 +1,17 @@
-
 <ion-view view-title="Fale Conosco">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding">
         <div class="list">
             <label class="item item-input item-select">
                 <div class="input-label">
-                  Selecione um departamento
+                  Departamento
                 </div>
                 <select ng-model="contato.departamento">
-                    <option>Selecione</option>
+                    <option value="">Selecione</option>
                     <option value="oficina">Oficina</option>
                     <option value="vendas">Vendas</option>
                     <option value="pecas">Peças</option>
@@ -16,7 +20,7 @@
 
             <label class="item item-input">
                 <span class="input-label">Assunto</span>
-                <input type="text" ng-model="contato.assunto">
+                <input type="text" ng-model="contato.assunto" class="right">
             </label>
 
             <label class="item item-input">

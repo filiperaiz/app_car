@@ -1,13 +1,20 @@
-
 <ion-view view-title="Seguro">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding">
-        <div class="list">
-            <label class="item item-input item-select">
+	    <div class="logo-seguro centro">
+		<img ng-src="img/golseguros.png" >
+        </div>
+		<div class="list">
+			<label class="item item-input item-select">
                 <div class="input-label">
-                  Selecione um carro
+                  Veículo
                 </div>
                 <select ng-model="seguro.veiculo">
-						<option value="">{{sel_veiculo}}</option>
+						<option value="">Selecione</option>
 						<option ng-repeat="veiculo in veiculos" value="{{veiculo.id_veiculo_app}}">{{veiculo.modelo}} [{{veiculo.placa}}]</option>
 				</select>
             </label>
@@ -21,7 +28,38 @@
                 </a>
             </div>
         </div>
-
+		
+		<ion-slide-box on-slide-changed="slideHasChanged($index)" style="border:solid 1px #ccc;height:118px" show-pager="true" does-continue="true" auto-play="true">
+		  <ion-slide>
+			<div class="box">
+				<img ng-src="img/seguradoras/seguradora1.jpg">
+				<img ng-src="img/seguradoras/seguradora2.jpg">
+				<img ng-src="img/seguradoras/seguradora3.jpg">
+			</div>
+		  </ion-slide>
+		  <ion-slide>
+			<div class="box">
+				<img ng-src="img/seguradoras/seguradora4.jpg">
+				<img ng-src="img/seguradoras/seguradora5.jpg">
+				<img ng-src="img/seguradoras/seguradora6.jpg">
+			</div>
+		  </ion-slide>
+		  <ion-slide>
+			<div class="box">
+				<img ng-src="img/seguradoras/seguradora8.jpg">
+				<img ng-src="img/seguradoras/seguradora9.jpg">
+				<img ng-src="img/seguradoras/seguradora10.jpg">
+			</div>
+		  </ion-slide>
+		  <ion-slide>
+			<div class="box">
+				<img ng-src="img/seguradoras/seguradora11.jpg">
+			</div>
+		  </ion-slide>
+		</ion-slide-box>
+		
+		
+		<div class="centro">"Fazemos seguro de veículo de qualquer marca"</div>
     </ion-content>
 </ion-view>
 

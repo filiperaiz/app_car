@@ -1,29 +1,31 @@
 <ion-view view-title="Alertas">
-<ion-content>
+<ion-content class="enquete">
 	<center><h4>Pesquisa de satisfação</h4></center>
 	<div class="list" ng-repeat="alerta in alertas">
-	<label class="item-input item-stacked-label">{{alerta.id_pergunta}}-{{alerta.pergunta}}
-</label>
-<label class="item-input">
-	<select ng-model="veiculo.servico" class="col col-offset-5">
-		<option>Selecione</option>
-		<option>1</option>
-	    <option>2</option>
-	    <option>3</option>
-	    <option>4</option>
-	    <option>5</option>
-	    <option>6</option>
-	    <option>7</option>
-	    <option>8</option>
-	    <option>9</option>
-	    <option>10</option>
-    </select>  </label>
-	
+		<label class="item-input item-stacked-label">
+			{{alerta.id_pergunta}}-{{alerta.pergunta}}
+		</label>
+		<label class="item-input">
+			<select data-ng-model="pesquisa[alerta.tag]" class="col col-offset-5">
+				<option value="0">Selecione</option>
+				<option value="1">1</option>
+				<option value="2">2</option>
+				<option value="3">3</option>
+				<option value="4">4</option>
+				<option value="5">5</option>
+				<option value="6">6</option>
+				<option value="7">7</option>
+				<option value="8">8</option>
+				<option value="9">9</option>
+				<option value="10">10</option>
+			</select>  
+		</label>
 	</div>
 	<div class="block-btn-center">
-	<a class="button button-block button-balanced" ng-click="">
-    Enviar 
-    </a>
+	
+		<a class="button button-block button-balanced" ng-click="respostaPesquisa(alertas[0].id_alt)" ng-enabled="!pesquisa[pergunta1]">
+		Enviar
+		</a>
     </div>
 </ion-content>
 </ion-view>

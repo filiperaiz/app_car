@@ -1,10 +1,22 @@
-<ion-view view-title="Alertas">
+<ion-view view-title="Alertas" cache-view="false">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
+	
     <ion-content class="padding">
-        <div class="list" ng-repeat="alerta in alertas">
-			
+<!--<a ng-click="updateNumber()" class="button button-small">Update Number</a>-->
+		<div class="centro" ng-hide="mustShow"> 
+			  <span class="item caixa_alerta">
+				<i class="icon ion-archive"></i>
+				<p>caixa de alerta vazia</p>
+			  </span>	
+		</div>
+        <div class="list" ng-show="mustShow" ng-repeat="alerta in alertas">
 			<span>
 				<a class="item item-thumbnail-left item-car" href="#/tab/{{alerta.tipo_notificacao}}/{{alerta.id}}">
-					<img src="http://alemanhafichas.com.br/app_alemanha/images/mensagem.png">
+					<img ng-src="http://alemanhafichas.com.br/app_alemanha/images/mensagem.png">
 					<h2>{{alerta.titulo}}</h2>
 					<p>{{alerta.mensagem}} </p>
 				</a>
@@ -12,3 +24,27 @@
         </div>
     </ion-content>
 </ion-view>
+
+<script id="templates/modal-alert.html" type="text/ng-template">
+    <ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-calm">
+            <h1 class="title">Adicionar veículo</h1>
+            <button class="button button-clear  button-icon ion-close" ng-click="modal.hide()"></button>
+        </ion-header-bar>
+ <ion-content class="padding centro">
+<h4>{{alertas[0].titulo}}</h4>
+<span ng-show="mustShowImg">
+<div class="block-btn-center" style="background:url({{alertas[0].link_notificacao}}) no-repeat center;background-size: cover;height:300px"></div>
+
+</span>
+<h5>{{alertas[0].mensagem}}</h5>
+
+<div class="block-btn-center">
+    <a class="button button-block button-balanced" ng-click="confirmaAlerta(alertas[0].id,alertas[0].id_ag)">
+	{{alertas[0].texto_botao}}
+	</a>
+</div>
+</ion-content>
+    </ion-modal-view>
+
+</script>

@@ -1,10 +1,12 @@
 <ion-view title="">
-    <ion-content class="bg-app widget-welcome" scroll="false">
-        <div class="bg-logo">
+    <ion-content class="bg-app widget-welcome" scroll="true">
+        <form>
+		<div class="bg-logo">
             <img src="img/bg-logo.png" alt="">
         </div>
         <div class="form-login">
-            <div class="list list-inset">
+            
+			<div class="list list-inset">
                 <label class="item item-input">
                     <input type="email" placeholder="Email" ng-model="login.email">
                 </label>
@@ -18,6 +20,7 @@
                 Entrar
                 </a>
             </div>
+			
         </div>
 
         <div class="cadastro">
@@ -35,7 +38,7 @@
                 </a>
             </div>
         </div>
-
+	</form>
     </ion-content>
 </ion-view>
 

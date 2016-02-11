@@ -1,12 +1,46 @@
 <ion-view view-title="Alertas">
-<ion-content class="padding">
-<h4>{{alertas[0].titulo}}</h4>
-<div class="block-btn-center" style="background:url({{alertas[0].link_notificacao}}) no-repeat center;background-size: cover;height:300px"></div>
-<h5>{{alertas[0].mensagem}}</h5>
+<ion-content class="padding centro">
+<h4>{{alerta[0].titulo}}</h4>
+<!--
+<span ng-show="mustShow">
+<div class="block-btn-center" style="background:url({{alerta[0].link_notificacao}}) no-repeat center;background-size: cover;height:300px"></div>
+</span>
+-->
+
+<span ng-show="imgShow">
+	<div class="item item-image">
+		<img ng-src="{{alerta[0].link_notificacao}}">
+	</div>
+</span>
+
+			
+			
+        
+
+<div class="list list-inset" ng-hide="imgShow">
+      <span class="item item-agendamento esq" href="#">
+		<h3>{{alerta[0].servico}}</h3>
+		<p><b>Data solicitada:</b> {{alerta[0].data_hora_solicitada}}</p>
+		<p><b>Veículo:</b> {{alerta[0].modelo}} {{alerta[0].placa}}</p>
+		<p><b>Loja:</b> {{alerta[0].loja}}</p>				
+	</span>
+</div>
+<h5>
+{{alerta[0].mensagem}}
+</h5>
+
+<div class="row">
+  <div class="col"><ion-radio ng-model="alerta.aceita" ng-value="'S'">Sim</ion-radio></div>
+  <div class="col"><ion-radio ng-model="alerta.aceita" ng-value="'N'">Não</ion-radio></div>
+</div>
+  
+  
+  
+
 
 <div class="block-btn-center">
-    <a class="button button-block button-balanced" ng-click="">
-	Estou interessado
+    <a class="button button-block button-balanced" ng-click="confirmaAlerta(alerta[0].id,alerta[0].id_ag)" ng-disabled="!alerta.aceita">
+	{{alerta[0].texto_botao}}
 	</a>
 </div>
 </ion-content>

@@ -6,6 +6,8 @@
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
 //cordova plugin add https://git-wip-us.apache.org/repos/asf/cordova-plugin-inappbrowser.git
+//cordova plugin add net.yoik.cordova.plugins.screenorientation
+//cordova plugin add cordova-plugin-network-information
 
 angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', 'ngCordova'])
 
@@ -23,6 +25,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             StatusBar.styleDefault();
         }
     });
+
 })
 
 .directive("navigateTo",function($ionicGesture) {
@@ -38,6 +41,43 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 		});
 	  }
 	}
+})
+
+.directive('onlyNum', function() {
+        return function(scope, element, attrs) {
+
+            var keyCode = [8,9,37,39,48,49,50,51,52,53,54,55,56,57,96,97,98,99,100,101,102,103,104,105,110];
+            element.bind("keydown", function(event) {
+                console.log($.inArray(event.which,keyCode));
+                if($.inArray(event.which,keyCode) == -1) {
+                    scope.$apply(function(){
+                        scope.$eval(attrs.onlyNum);
+                        event.preventDefault();
+                    });
+                    event.preventDefault();
+                }
+
+            });
+        };
+    })
+
+.directive('formatar', function(){
+    return {
+        require: 'ngModel',
+        link: function(scope, element, attrs, ngModel){
+           /* ngModel.$formatters.push(function(value){
+                //formats the value for display when ng-model is changed
+                return '150'; 
+            });*/
+            ngModel.$parsers.push(function(value){
+                //formats the value for ng-model when input value is changed
+				var numbers = value.replace(/\D/g, '') ; //somente numero
+				element.val(numbers) ; //somente numero
+				//value.toUpperCase();
+				return numbers ;
+            });
+        }
+    };
 })
 
 .config(function($stateProvider, $urlRouterProvider) {
@@ -65,7 +105,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         url: '/tab',
         abstract: true,
         templateUrl: 'templates/tabs.html',
-		controller: 'principalCtrl'
+		//controller: 'principalCtrl'
     })
 
     // Each tab has its own nav history stack:
@@ -89,7 +129,27 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
             }
         }
     })
+	
+	.state('tab.editVeiculo', {
+        url: '/editVeiculo/:id',
+        views: {
+            'tab-principal': {
+                templateUrl: 'templates/editVeiculo.html',
+                controller: 'editVeiculoCtrl'
+            }
+        }
+    })
 
+	.state('tab.editAgendamento', {
+        url: '/editAgendamento/:id',
+        views: {
+            'tab-principal': {
+                templateUrl: 'templates/editAgendamento.html',
+                controller: 'editAgendamentoCtrl'
+            }
+        }
+    })
+	
     .state('tab.agendamento', {
         url: '/agendamento',
         views: {
@@ -141,7 +201,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     })
 
     .state('tab.avaliacao', {
-        url: '/avaliacao',
+        url: '/avaliacao/:id',
         views: {
             'tab-principal': {
                 templateUrl: 'templates/avaliacao.html',

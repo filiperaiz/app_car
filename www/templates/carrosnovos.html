@@ -1,97 +1,238 @@
 <ion-view view-title="Veiculos Novos">
+	<ion-nav-buttons side="left">
+	  <a class="button icon-left button-clear" href="#/tab/principal"><i class="icon ion-ios-arrow-back"></i> Menu</a>
+    </ion-nav-buttons>
+	<ion-nav-buttons side="right">
+    </ion-nav-buttons>
     <ion-content class="padding slide-car">
         <ion-slide-box on-slide-changed="slideHasChanged($index)">
-            <ion-slide>
+            
+			<ion-slide>
                 <div class="box item-slide">
-                    <img src="img/slide-car/fox.jpg">
-                    <h2 class="name-car">Fox</h2>
-
-
+                    <img src="img/slide-car/amarok.jpg">
+                    <h2 class="name-car">Amarok</h2>
                     <div class="row">
-                        <div class="col col-50">
-                            <a class="button button-block button-stable"  ng-click="showDetails_1 = ! showDetails_1">
-                                Detalhes
-                            </a>
-                        </div>
-
-                        <div class="col col-50">
-                            <a class="button button-block button-balanced" href="#/tab/avaliacao">
-                                Eu quero
-                            </a>
-                        </div>
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_1 = ! showDetails_1">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/10">Eu quero</a></div>
                     </div>
-
                     <div class="detail" ng-show="showDetails_1">
-                        <a href="#" class="close-detail" ng-click="showDetails_1 = ! showDetails_1"><i class="icon ion-close-circled"></i></a>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
+						<a href="#" class="close-detail" ng-click="showDetails_1 = ! showDetails_1"><i class="icon ion-close-circled"></i></a>
+						
+                        <p>A Amarok vem equipada com tecnologia 2.0 TDI Biturbo diesel e sistema de injeção Common Rail de alta performance, a Amarok entrega alto torque em baixas rotações, mostrando toda a sua força para encarar qualquer desafio. Tudo isso graças aos dois turbocompressores independentes – exclusividade da Amarok no mercado brasileiro – que complementam o conjunto, gerando 180 cv de potência.</p>						
+						
                     </div>
                 </div>
             </ion-slide>
-
-            <ion-slide>
+			
+			<ion-slide>
                 <div class="box item-slide">
                     <img src="img/slide-car/gol.jpg">
-                    <h2 class="name-car">gol</h2>
-
-
+                    <h2 class="name-car">Gol</h2>
                     <div class="row">
-                        <div class="col col-50">
-                            <a class="button button-block button-stable"  ng-click="showDetails_2 = ! showDetails_2">
-                                Detalhes
-                            </a>
-                        </div>
-
-                        <div class="col col-50">
-                            <a class="button button-block button-balanced" href="#/tab/avaliacao">
-                                Eu quero
-                            </a>
-                        </div>
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_4 = ! showDetails_4">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/1">Eu quero</a></div>
                     </div>
-
-                    <div class="detail" ng-show="showDetails_2">
-                        <a href="#" class="close-detail" ng-click="showDetails_2 = ! showDetails_2"><i class="icon ion-close-circled"></i></a>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
+                    <div class="detail" ng-show="showDetails_4">
+                        <a href="#" class="close-detail" ng-click="showDetails_4 = ! showDetails_4"><i class="icon ion-close-circled"></i></a>
+                        <p>O Gol é econômico, mas valente e robusto. Ele vem de série com airbag duplo frontal, ABS com EBD, direção hidráulica, suspensão elevada, faróis e lanterna de neblina, faróis com máscara negra e duplo refletor, travas elétricas e vidros elétricos dianteiros. O motor é o 1.0 TEC, que rende 76 cv de potência e 10,6 kgfm de torque máximos com etanol. Para garantir a esportividade, o câmbio manual de cinco marchas tem engates rápidos e precisos. O Gol pode atingir a máxima de 160 km/h.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_crossfox.jpg">
+                    <h2 class="name-car">Crossfox</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_5 = ! showDetails_5">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/6">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_5">
+                        <a href="#" class="close-detail" ng-click="showDetails_5 = ! showDetails_5"><i class="icon ion-close-circled"></i></a>
+                        <p>A nova central multimídia irá conectar você com o mundo a partir do seu Volkswagen. Agora, você já pode fazer ou responder chamadas, enviar mensagens por comando de voz, checar agenda, acessar aplicativos, como o Spotify, e muito mais.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_fox.jpg">
+                    <h2 class="name-car">Novo Fox</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_6 = ! showDetails_6">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/2">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_6">
+                        <a href="#" class="close-detail" ng-click="showDetails_6 = ! showDetails_6"><i class="icon ion-close-circled"></i></a>
+                        <p>Revolucionário, o Fox foi totalmente pensado nas necessidades e conforto do motorista e dos passageiros. Isso tudo porque ele foi construído seguindo o conceito "Designed Around the Passengers" (desenvolvido ao redor dos passageiros).</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_fusca.jpg">
+                    <h2 class="name-car">Novo Fusca</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_7 = ! showDetails_7">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/11">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_7">
+                        <a href="#" class="close-detail" ng-click="showDetails_7 = ! showDetails_7"><i class="icon ion-close-circled"></i></a>
+                        <p>O motor 2.0 TSI de 211 cv do Fusca está pronto para corresponder ao seu desejo por aquele algo mais quando o assunto é velocidade. E em conjunto com a transmissão de seis velocidades, seja ela manual ou DSG Tiptronic, o controle e o desempenho serão sempre tão precisos e seguros quanto emocionantes. Visualmente, o acabamento do Fusca já promete o que ele cumprirá uma vez acionada a ignição. Rodas, frisos e todos os detalhes externos é com destaque para a dupla saída de escapamento.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_golf.jpg">
+                    <h2 class="name-car">Novo Golf</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_8 = ! showDetails_8">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/3">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_8">
+                        <a href="#" class="close-detail" ng-click="showDetails_8 = ! showDetails_8"><i class="icon ion-close-circled"></i></a>
+                        <p>Ao dar partida em seu Novo Golf e experimentar o ronco do seu motor 1.4L TSI 140 cv BlueMotion Technology, você estará fazendo parte de uma tradição sem igual no mundo automotivo.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_golf_variant.jpg">
+                    <h2 class="name-car">Golf Variant</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_9 = ! showDetails_9">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/13">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_9">
+                        <a href="#" class="close-detail" ng-click="showDetails_9 = ! showDetails_9"><i class="icon ion-close-circled"></i></a>
+                        <p>Derivado do Novo Golf, o modelo chega ao mercado brasileiro repleto de tecnologia e sofisticação. O Golf Variant é a combinação perfeita entre esportividade, segurança e conforto, combinando toda a inovação da Volkswagen com muita versatilidade e espaço interno.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_jetta.jpg">
+                    <h2 class="name-car">Jetta</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_11 = ! showDetails_11">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/7">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_11">
+                        <a href="#" class="close-detail" ng-click="showDetails_11 = ! showDetails_11"><i class="icon ion-close-circled"></i></a>
+                        <p>Considerada uma das melhores transmissões do mundo, o câmbio DSG conta com dupla embreagem, impressionando pela suavidade e rapidez nas trocas de marcha do Novo Jetta.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_space_fox.jpg">
+                    <h2 class="name-car">Space Fox</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_13 = ! showDetails_13">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/9">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_13">
+                        <a href="#" class="close-detail" ng-click="showDetails_13 = ! showDetails_13"><i class="icon ion-close-circled"></i></a>
+                        <p>Motor 1.6l MSI de 120 cv com potência de 120 cv, acelerando de 0-100 km/h em 10,3 s (etanol) e com uma velocidade máxima de 189 km/h, o motor EA211 1.6l MSI Total Flex é um dos destaques do Novo Space Cross, pois trata-se de um motor com performance que alia excelente dirigibilidade a baixo consumo.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/novo_touareg.jpg">
+                    <h2 class="name-car">Touareg</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_14 = ! showDetails_14">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/15">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_14">
+                        <a href="#" class="close-detail" ng-click="showDetails_14 = ! showDetails_14"><i class="icon ion-close-circled"></i></a>
+                        <p>O Touareg, sai de fábrica equipado com seis airbags, oito altofalantes, abertura do porta-malas por controle remoto, freios ABS, alarme ultrassom, apoio de braço individual para motorista e passageiro, ar-condicionado Climatronic de duas zonas, assistente de subida e descida, banco traseiro bipartido, banco traseiro com ajuste longitudinal e inclinação do encosto, bancos dianteiros com ajuste elétrico e aquecimento, cabo para conexão de iPod, computador de bordo com display colorido, controle automático de velocidade, direção hidráulica, faróis bi-xenon direcionais com luz dia em LEDs, ignição do motor por botão (kessy) e rodas de liga-leve 19” modelo Everest, entre outros itens.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/passat.jpg">
+                    <h2 class="name-car">Passat</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_15 = ! showDetails_15">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/14">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_15">
+                        <a href="#" class="close-detail" ng-click="showDetails_15 = ! showDetails_15"><i class="icon ion-close-circled"></i></a>
+                        <p>Construído sobre a moderna e inovadora plataforma MQB (Modular Transverse Matrix), com 220 cv de potência, o Novo Passat é uma verdadeira obra-prima da engenharia alemã. A inteligência inovadora da Volkswagen está presente em diversos itens que fazem do Novo Passat referência em segurança.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/saveiro.jpg">
+                    <h2 class="name-car">Saveiro</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_17 = ! showDetails_17">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/4">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_17">
+                        <a href="#" class="close-detail" ng-click="showDetails_17 = ! showDetails_17"><i class="icon ion-close-circled"></i></a>
+                        <p>Tudo na Saveiro foi pensado visando o desempenho, sem deixar de lado o conforto e estilo. Desde os faróis com máscara negra até a lanterna traseira de neblina, reúne funcionalidade com um visual de quem está pronto para encarar todos os desafios. Nela cabe a aventura que você imaginar.</p>
                     </div>
                 </div>
             </ion-slide>
 
-            <ion-slide>
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/tiguan.jpg">
+                    <h2 class="name-car">Tiguan</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_18 = ! showDetails_18">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/12">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_18">
+                        <a href="#" class="close-detail" ng-click="showDetails_18 = ! showDetails_18"><i class="icon ion-close-circled"></i></a>
+                        <p>Linhas fortes e limpas predominam também na lateral do utilitário, onde se destaca uma nova moldura na parte inferior. As molduras bem definidas das rodas, a linha das janelas, que sobe na direção da traseira e as superfícies das portas e ombros, e a coluna traseira com formato típico da marca acentuam o caráter Volkswagen do Novo Tiguan. Complementando, o SUV traz de série novas rodas de liga leve com 17 polegadas, design Philadelphia.</p>
+                    </div>
+                </div>
+            </ion-slide>
+			
+			<ion-slide>
                 <div class="box item-slide">
                     <img src="img/slide-car/up.jpg">
-                    <h2 class="name-car">UP</h2>
-
-
+                    <h2 class="name-car">Up</h2>
                     <div class="row">
-                        <div class="col col-50">
-                            <a class="button button-block button-stable"  ng-click="showDetails_3 = ! showDetails_3">
-                                Detalhes
-                            </a>
-                        </div>
-
-                        <div class="col col-50">
-                            <a class="button button-block button-balanced" href="#/tab/avaliacao">
-                                Eu quero
-                            </a>
-                        </div>
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_19 = ! showDetails_19">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/8">Eu quero</a></div>
                     </div>
-
-                    <div class="detail" ng-show="showDetails_3">
-                        <a href="#" class="close-detail" ng-click="showDetails_3 = ! showDetails_3"><i class="icon ion-close-circled"></i></a>
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates facere sunt harum similique hic iure magni nam! Culpa quibusdam qui, est, cumque veniam ex quaerat deleniti aliquam! Consequatur, eveniet, cumque.</p>
+                    <div class="detail" ng-show="showDetails_19">
+                        <a href="#" class="close-detail" ng-click="showDetails_19 = ! showDetails_19"><i class="icon ion-close-circled"></i></a>
+                        <p>Com design clean e moderno, o up! esbanja simpatia. E se a aparência chama a atenção, o interior não fica atrás. Tudo foi projetado para o conforto e a ergonomia. Mas o grande destaque está sob o capô. O motor 1.0 de três cilindros é moderno e transforma o up! num dos carros mais potentes e econômicos do país.</p>
                     </div>
                 </div>
             </ion-slide>
-
-
+			
+			<ion-slide>
+                <div class="box item-slide">
+                    <img src="img/slide-car/voyage.jpg">
+                    <h2 class="name-car">Voyage</h2>
+                    <div class="row">
+                        <div class="col col-50"><a class="button button-block button-stable"  ng-click="showDetails_20 = ! showDetails_20">Detalhes</a></div>
+                        <div class="col col-50"><a class="button button-block button-balanced" href="#/tab/avaliacao/5">Eu quero</a></div>
+                    </div>
+                    <div class="detail" ng-show="showDetails_20">
+                        <a href="#" class="close-detail" ng-click="showDetails_20 = ! showDetails_20"><i class="icon ion-close-circled"></i></a>
+                        <p>Pensado desde sua concepção para ser um sedã, o Voyage não é mera adaptação do Gol para ter porta-malas saliente. Isso já o coloca à frente de muitos concorrentes, mas ele também oferece bom espaço interno, economia, desempenho e o principal: a mesma dirigibilidade pela qual o Gol é conhecido, com ótima estabilidade e números de frenagem dignos de inveja. Espaço com arrojo. Requinte com desempenho. Se você pensa que isso só é possível de sedãs médios para cima, precisa conhecer o Voyage e seus muitos "algos a mais".</p>
+                    </div>
+                </div>
+            </ion-slide>
 
         </ion-slide-box>
     </ion-content>
